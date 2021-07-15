@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI;
 
 namespace Open_Price_Calculator.Controller
 {
     public class AddSellOrder
     {
-        public static bool AddSell(int id, float price, int volume, DateTime dt)
+        public static bool AddSell(int id, double price, int volume, DateTime dt)
         {
             bool res;
             try
@@ -20,8 +21,10 @@ namespace Open_Price_Calculator.Controller
                 s.SellOrderTime = dt;
 
                 OrderBook Order = OrderBook.Instance();
-                Order.SellBook.Add(s);
+                OrderBook.SellBook.Add(s);
                 //Order.SellBook.OrderByDescending(x => x.SellPrice);
+
+               
 
                 res = true;
             }

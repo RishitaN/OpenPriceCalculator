@@ -7,9 +7,9 @@ namespace Open_Price_Calculator.Model
 {
     public class OrderBook
     {
-        public  List<BuyOrder> BuyBook;
+        public  static List<BuyOrder> BuyBook;
 
-        public  List<SellOrder> SellBook;
+        public  static List<SellOrder> SellBook;
 
        
 
@@ -26,8 +26,8 @@ namespace Open_Price_Calculator.Model
                     if(_instance == null)
                     {
                         _instance = new OrderBook();
-                        _instance.BuyBook = new List<BuyOrder>();
-                        _instance.SellBook = new List<SellOrder>();
+                        BuyBook = new List<BuyOrder>();
+                        SellBook = new List<SellOrder>();
                     }
                     return _instance;
                 }

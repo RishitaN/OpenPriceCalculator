@@ -13,14 +13,13 @@ namespace Open_Price_Calculator
             //TempOrderBook defaultTempOrderBook = new TempOrderBook();
             try
             {
-                OrderBook Order = OrderBook.Instance();
-                if (!(Order.SellBook.Count() > 0))
+                if (!(OrderBook.SellBook.Count() > 0))
                 {
                     throw new Exception(" NO sell Order found");
 
 
                 }
-                else if (!(Order.BuyBook.Count() > 0))
+                else if (!(OrderBook.BuyBook.Count() > 0))
                 {
                     throw new Exception(" NO Buy Order found");
                 }
@@ -29,7 +28,7 @@ namespace Open_Price_Calculator
                     //we take a DeepCopy of our Singleton OrderBook
                     //user can still keep placing buy and sell order - those will get added t OrderBook
                     //Meanwhile we can work on TempOrderBook to calculate Opening Price
-                    TempOrderBook tempOrderBook = new TempOrderBook(Order.BuyBook, Order.SellBook);
+                    TempOrderBook tempOrderBook = new TempOrderBook(OrderBook.BuyBook, OrderBook.SellBook);
 
                    
                     //sort the Buy order in Desc price and Ascending orderDate

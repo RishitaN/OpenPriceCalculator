@@ -26,8 +26,7 @@ namespace Open_Price_Calculator.Model
 
         public TempOrderBook DeepCopy()
         {
-            OrderBook OB = OrderBook.Instance();
-            TempOrderBook cloneOrderBook = new TempOrderBook(OB.BuyBook, OB.SellBook);
+            TempOrderBook cloneOrderBook = new TempOrderBook(OrderBook.BuyBook, OrderBook.SellBook);
 
             return cloneOrderBook;
         }
